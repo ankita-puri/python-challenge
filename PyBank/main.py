@@ -49,7 +49,7 @@ GIncDate =Dates[GIncIndex]
 
 GDecDate =Dates[GDecIndex]
 
-analysis=(f"Financial Analysis\n"
+finalanalysis=(f"Financial Analysis\n"
           f"-----------------------------\n"
           f"Total Months: {len(Dates)}\n"
           f"Total:  ${totalProfitLoss}\n"
@@ -58,41 +58,7 @@ analysis=(f"Financial Analysis\n"
           f"Greatest Decrease in Profits: {GDecDate} (${GreatestDecrease})\n"
 
 )
-print(analysis)
+print(finalanalysis)
 
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-    #print(f"CSV Header: {csv_header}")
-
-    #row_count = sum(1 for row in csvfile)
-    #print(row_count )
-
-    
-    
-    # row_count = sum(1 for row in csvfile)
-    # print(row_count )
-
-# total = 0
-# for row in csvreader:  
-#    total += int(row[1])
-#    print(total)
+with open(analysisfile, 'w') as textfile:
+    textfile.write(finalanalysis)

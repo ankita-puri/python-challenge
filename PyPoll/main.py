@@ -13,6 +13,7 @@ VoterID=[] #creating lists to add data
 County=[]
 CandidateList=[]
 List_of_candidates=[]
+New_List=[]
 
 with open(electionfile, 'r') as PyPoll: #reading datafile
     reader=csv.reader(PyPoll, delimiter=",")
@@ -29,7 +30,6 @@ with open(electionfile, 'r') as PyPoll: #reading datafile
 #TotalVotes =  print(f"Total Votes:  {len(VoterID)}")
 
 
-
 List_of_candidates = dict(Counter(CandidateList))
 #print (List_of_candidates) 
 
@@ -40,17 +40,19 @@ for k, v in List_of_candidates.items():
 
 
 
+
+
 Winner= max(List_of_candidates.items(), key=operator.itemgetter(1))[0]
 #print(Winner)
 
-electionanalysis=(f"Election Results\n"
-          f"-----------------------------\n"
-          f"Total Votes:  {len(VoterID)}\n"
-          f"------------------------------\n"
-          f"{k,pct,v}\n"
-          f"{k,pct,v}\n"
-          f"{k,pct,v}\n"
-          f"------------------------------\n"
-          f"Winner:{Winner}\n"
-)
-print(electionanalysis)
+#electionanalysis=(f"Election Results\n"
+          #f"-----------------------------\n"
+          #f"Total Votes:  {len(VoterID)}\n"
+          
+        
+          #f"------------------------------\n"
+          #f"------------------------------\n"
+          #f"Winner:{Winner}\n"
+#)
+
+#print(electionanalysis)

@@ -25,9 +25,6 @@ with open(datafile, 'r') as PyBank: #reading datafile
     for i in ProfitLoss:
         totalProfitLoss=i + totalProfitLoss
 
-#def Average(list):
-    #return round(stat.mean(list),2)
-#using list comp to calculate change
 ProfitLossChange = [ProfitLoss[i+1] - ProfitLoss[i] for i in range(0,len(ProfitLoss)-1)]
 
 AverageChange=Average(ProfitLossChange) 

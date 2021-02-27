@@ -3,8 +3,6 @@ import csv
 from collections import Counter
 import operator  # to calculate average
 
-# def Average(list):
-# return round(stat.mean(list),2)
 
 electionfile = os.path.join('..', 'Resources', 'PyPoll.csv')  # realtive paths
 resultfile = os.path.join('..', 'analysis', 'result.txt')
@@ -28,7 +26,6 @@ with open(electionfile, 'r') as PyPoll:  # reading datafile
 
 
 List_of_candidates = dict(Counter(CandidateList))
-# print (List_of_candidates)
 Winner = max(List_of_candidates.items(), key=operator.itemgetter(1))[0]
 s = sum(List_of_candidates.values())
 electionAnalysisTop = (f"Election Results\n"
@@ -58,4 +55,3 @@ result_file.write(electionAnalysisBottom)
 
 result_file.close()
 
-# print(electionanalysis)
